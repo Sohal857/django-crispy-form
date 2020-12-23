@@ -1,0 +1,13 @@
+{% extends 'reg_user/base.html' %}
+{% block title %}Form Example 1 - Basic Crispy Form Rendering {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2>Form Example 1 - Basic Crispy Form Rendering</h2>
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit">Register</button>
+  </form>
+{% endblock %}

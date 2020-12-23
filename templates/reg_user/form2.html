@@ -1,0 +1,69 @@
+{% extends 'reg_user/base.html' %}
+{% block title %} {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <form method="post">
+    {% csrf_token %}
+    <h4>Personal information</h4>
+    <hr style="border-top:2px solid #ccc; margin-top: -5px"//>
+    <div class="form-row">
+      <div class="form-group col-md-6 mb-0">
+        {{ form.username|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-6 mb-0">
+        {{ form.email|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-6 mb-0">
+        {{ form.first_name|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-6 mb-0">
+        {{ form.last_name|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-6 mb-0">
+        {{ form.password|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-6 mb-0">
+        {{ form.password_confirm|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-6 mb-0">
+        {{ form.website|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-6 mb-0">
+        {{ form.company|as_crispy_field }}
+      </div>
+    </div>
+    <div class="">
+      <h4>Address</h4>
+      <hr style="border-top:2px solid #ccc; margin-top: -5px"/>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-4 mb-0">
+        {{ form.address|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.street_number|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.street_name|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.city|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.state|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.zip_code|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+        {{ form.country|as_crispy_field }}
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+{% endblock %}
